@@ -15,7 +15,7 @@ services:
     build: ./db_tools
     ports: # port mapping "external:internal". Internal ports are predefined. 
      - "50000:50000" #DB2 port
-    container_name: "wa-db2"
+    container_name: "hwa-db2"
     privileged: true
     hostname: wa-db2
     networks:
@@ -45,7 +45,7 @@ services:
      - "31111:31111" #NETMAN
      - "31131:31131" #EIF
     # - "35131:35131" #EIF SSL
-    container_name: "wa-server"
+    container_name: "hwa-server"
     hostname: wa-server
     networks:
      - wa-net
@@ -69,7 +69,7 @@ services:
      - wa-db2
     ports: # port mapping "external:internal". Internal ports are predefined. 
      - "9443:9443" #HTTPS DWC
-    container_name: "wa-console"
+    container_name: "hwa-console"
     hostname: wa-console
     networks:
      - wa-net
@@ -90,7 +90,7 @@ services:
     image: hclcr.io/wa/hcl-workload-automation-agent-dynamic:9.5.0.04.20210709
     depends_on:
      - wa-server
-    container_name: "wa-agent"
+    container_name: "hwa-agent"
     hostname: wa-agent
     networks:
      - wa-net
