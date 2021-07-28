@@ -71,8 +71,8 @@ services:
      - wa-db2
     ports: # port mapping "external:internal". Internal ports are predefined. 
      - "31116:31116" #HTTPS MASTER
-     - "31111:31111" #NETMAN
-     - "31131:31131" #EIF
+     - "31112:31111" #NETMAN
+    # - "31131:31131" #EIF
     # - "35131:35131" #EIF SSL
     container_name: "hwa-server2"
     hostname: wa-server2
