@@ -56,7 +56,7 @@ services:
       options:
         max-size: "10m"
         max-file: "5"
-
+     
   wa-console:
     env_file:
      - wa.env
@@ -104,7 +104,7 @@ services:
 
 volumes:
   wa-db2inst1_home:
-  wa-server-data: 
+  wa-server-data:
   wa-console-data:
   wa-agent-data:
 networks:
