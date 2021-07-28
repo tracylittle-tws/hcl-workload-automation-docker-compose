@@ -57,35 +57,6 @@ services:
         max-size: "10m"
         max-file: "5"
 
-  wa-server2:
-    env_file:
-     - wa.env
-    environment:
-     - DB_HOSTNAME=wa-db2 # The host name or IP address of database server (DO NOT TOUCH)
-     - SERVERHOSTNAME=wa-server2 #  The host name on which the server is contacted by internal dynamic agents (DO NOT TOUCH)
-     - SERVERPORT=31116 #  The port on which the server is contacted by internal dynamic agents (DO NOT TOUCH)     
-     - CREATE_PLAN=false # If true, it executes an automatic JnextPlan at container deploy time
-     - AGT_NAME=WA_SAGT2 # The name of the agent included in the server
-    image: hclcr.io/wa/hcl-workload-automation-server:9.5.0.04.20210709
-    depends_on:
-     - wa-db2
-    ports: # port mapping "external:internal". Internal ports are predefined. 
-     - "31117:31116" #HTTPS MASTER
-     - "31112:31111" #NETMAN
-    # - "31131:31131" #EIF
-    # - "35131:35131" #EIF SSL
-    container_name: "hwa-server2"
-    hostname: wa-server2
-    networks:
-     - wa-net
-    volumes:
-     - wa-server2-data:/home/wauser/
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "5"
-
   wa-console:
     env_file:
      - wa.env
@@ -133,8 +104,7 @@ services:
 
 volumes:
   wa-db2inst1_home:
-  wa-server-data:
-  wa-server2-data:    
+  wa-server-data: 
   wa-console-data:
   wa-agent-data:
 networks:
