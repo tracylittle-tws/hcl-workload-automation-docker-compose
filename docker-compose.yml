@@ -67,7 +67,6 @@ services:
      - AGT_NAME=WA_SAGT2 # The name of the agent included in the server
     image: hclcr.io/wa/hcl-workload-automation-server:9.5.0.04.20210709
     depends_on:
-     - wa-db2
      - wa-server
     ports: # port mapping "external:internal". Internal ports are predefined. 
      - "31126:31116" #HTTPS MASTER
