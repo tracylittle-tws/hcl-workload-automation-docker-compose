@@ -44,7 +44,6 @@ services:
      - "31116:31116" #HTTPS MASTER
      - "31111:31111" #NETMAN
      - "31131:31131" #EIF
-     - "25:25" #EMAIL
     # - "35131:35131" #EIF SSL
     container_name: "hwa-server"
     hostname: wa-server
