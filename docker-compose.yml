@@ -75,8 +75,7 @@ services:
      - "31126:31116" #HTTPS MASTER
      - "31112:31111" #NETMAN
      - "31132:31131" #EIF
-     - "53022:22" #ssh     
-     - "8080:8080" #http url docs    
+     - "53022:22" #ssh        
     # - "35131:35131" #EIF SSL
     container_name: "hwa-server2"
     hostname: wa-server2
