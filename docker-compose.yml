@@ -45,6 +45,7 @@ services:
      - "31111:31111" #NETMAN
      - "31131:31131" #EIF
      - "52022:22" #ssh
+     - "8080:8080" #http url docs
     # - "35131:35131" #EIF SSL
     container_name: "hwa-server"
     hostname: wa-server
@@ -75,7 +76,7 @@ services:
      - "31112:31111" #NETMAN
      - "31132:31131" #EIF
      - "53022:22" #ssh     
-     - "25:25" #EMAIL     
+     - "8080:8080" #http url docs    
     # - "35131:35131" #EIF SSL
     container_name: "hwa-server2"
     hostname: wa-server2
